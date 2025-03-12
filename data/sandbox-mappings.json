@@ -1,0 +1,38 @@
+{
+  "sandbox_mappings": [
+    {
+      "email_domain": "customer1.com",
+      "sandbox_url": "http://sandbox1.waltonparkman.com",
+      "name": "Customer 1 Sandbox"
+    },
+    {
+      "email_domain": "customer2.com",
+      "sandbox_url": "http://sandbox2.waltonparkman.com",
+      "name": "Customer 2 Sandbox"
+    },
+    {
+      "email_domain": "customer3.com",
+      "sandbox_url": "http://sandbox3.waltonparkman.com",
+      "name": "Customer 3 Sandbox"
+    }
+  ],
+  "email_mappings": [
+    {
+      "email": "admin@waltonparkman.com",
+      "access_all": true
+    },
+    {
+      "email": "support@waltonparkman.com",
+      "access_all": true
+    },
+    {
+      "email": "john@customer1.com",
+      "sandbox_url": "http://sandbox1.waltonparkman.com"
+    },
+    {
+      "email": "jane@customer2.com",
+      "sandbox_url": "http://sandbox2.waltonparkman.com"
+    }
+  ],
+  "default_sandbox": "http://default.waltonparkman.com"
+}

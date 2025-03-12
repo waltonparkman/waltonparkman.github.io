@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odoo Sandbox Access | Walton Parkman</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .sandbox-login-container {
+            max-width: 600px;
+            margin: 120px auto;
+            padding: 30px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .sandbox-login-container h1 {
+            color: #4c4c4c;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+        
+        .sandbox-login-form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .sandbox-login-form input {
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .sandbox-login-form button {
+            background: linear-gradient(135deg, #875A7B, #6D4E66);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .sandbox-login-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(135, 90, 123, 0.3);
+        }
+        
+        .error-message {
+            color: #e74c3c;
+            margin-bottom: 15px;
+            display: none;
+        }
+        
+        .loader {
+            display: none;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .loader i {
+            animation: spin 1s linear infinite;
+            color: #875A7B;
+            font-size: 24px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .sandbox-info {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 5px;
+            border-left: 4px solid #875A7B;
+        }
+        
+        .sandbox-info h3 {
+            margin-top: 0;
+            color: #4c4c4c;
+        }
+        
+        .sandbox-list {
+            margin-top: 20px;
+            display: none;
+        }
+        
+        .sandbox-list h3 {
+            margin-bottom: 15px;
+        }
+        
+        .sandbox-card {
+            background: #f9f9f9;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .sandbox-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .sandbox-card-name {
+            font-weight: bold;
+        }
+        
+        .sandbox-card a {
+            background: #875A7B;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Walton Parkman</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Odoo Sandboxes <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="sandbox-login.html" class="active">Sandbox Login</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="sandbox-login-container">
+            <h1>Access Your Odoo Sandbox</h1>
+            <p>Enter your email address to access your custom Odoo development environment.</p>
+            
+            <div class="error-message" id="error-message"></div>
+            
+            <form class="sandbox-login-form" id="sandbox-login-form">
+                <input type="email" id="email-input" placeholder="Your Email Address" required>
+                <button type="submit">Access My Sandbox <i class="fas fa-arrow-right"></i></button>
+            </form>
+            
+            <div class="loader" id="loader">
+                <i class="fas fa-circle-notch"></i> Locating your sandbox...
+            </div>
+            
+            <div class="sandbox-list" id="admin-sandbox-list">
+                <h3>Available Sandboxes</h3>
+                <div id="sandbox-cards-container">
+                    <!-- Sandbox cards will be populated here -->
+                </div>
+            </div>
+            
+            <div class="sandbox-info">
+                <h3>About Our Sandboxes</h3>
+                <p>Odoo sandboxes provide a secure environment to test custom development, modules, and configurations before deploying to production. All sandboxes include:</p>
+                <ul>
+                    <li>Secure, isolated testing environment</li>
+                    <li>Regular backups and maintenance</li>
+                    <li>Two-factor authentication security</li>
+                    <li>Technical support and assistance</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Walton Parkman. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/sandbox-router.js"></script>
+</body>
+</html>
