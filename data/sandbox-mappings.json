@@ -26,6 +26,10 @@
       "access_all": true
     },
     {
+      "email": "wparkman@protonmail.com",
+      "sandbox_url": "http://localhost:8069/odoo"
+    },
+    {
       "email": "john@customer1.com",
       "sandbox_url": "http://sandbox1.waltonparkman.com"
     },
