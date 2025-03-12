@@ -101,14 +101,17 @@ document.addEventListener('DOMContentLoaded', function() {
     // Function to redirect to sandbox
     function redirectToSandbox(url) {
         // You could add a loading message or transition here
-        console.log(`Redirecting to: ${url}`);
+        const loginEmail = encodeURIComponent(emailInput.value.trim());
+        const loginUrl = `${url}/web/login?login=${loginEmail}`;
+        
+        console.log(`Redirecting to: ${loginUrl}`);
         
         // For development/testing purposes, show an alert instead of actual redirect
         if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-            alert(`Development mode: Would redirect to ${url}/web/login`);
+            alert(`Development mode: Would redirect to ${loginUrl}`);
         } else {
             // In production, perform the actual redirect
-            window.location.href = `${url}/web/login`;
+            window.location.href = loginUrl;
         }
     }
     
