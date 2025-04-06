@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Walton Parkman - AI-Developed Odoo Solutions</title>
+    <title>Walton Parkman - AI-Powered Odoo Solutions</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -16,6 +16,12 @@
             <nav>
                 <ul class="main-menu">
                     <li><a href="#services">Services</a></li>
+                    <li class="menu-item-has-children">
+                        <a href="#" class="dropdown-btn">Odoo Sandboxes <i class="fas fa-caret-down"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="sandbox-login.html">Sandbox Login</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -47,7 +53,14 @@
                     </ul>
                     <div class="sandbox-cta">
                         <p>Access your Odoo sandbox environment now:</p>
-                        <a href="https://odoo.sh" class="btn">Login to Sandbox <i class="fas fa-sign-in-alt"></i></a>
+                        <!-- Replaced link with dropdown -->
+                        <select onchange="redirectToDroplet(this)">
+                            <option value="" disabled selected>Select Customer...</option>
+                            <option value="http://143.198.150.240">Parkman 1</option>
+                            <option value="http://143.198.150.240">Toyota</option>
+                            <option value="http://143.198.150.240">SpaceX</option>
+                            <option value="http://143.198.150.240">Deepmind</option>
+                        </select>
                     </div>
                 </div>
                 <div class="sandbox-image">
@@ -104,7 +117,7 @@
                     <p>As of 03/28/2025, Codeium Windsurf, with the Cascade coding agent backed by the latest Google Gemini 2.5 LLM model is a superb AI software craftsman. Using it, one person can now rapidly enhance and test massive codebases, like the open source Odoo ERP system.</p>
                     <p>On my home page, I confidently declare that I do Odoo Vibe Coding. The term "vibe coding" was introduced by computer scientist Andrej Karpathy (co-founder of OpenAI and former AI lead at Tesla) in early 2025. Vibe Coding relies heavily on Large Language Models (LLMs). Instead of just manually writing code, the programmer uses natural language descriptions or conversational prompts (like voice commands) to have the AI generate code.</p>
                     <p>This really works now. AI understands your codebase. New models keep coming out and exponential improvement is happening.  Vibe Coding will soon be the customary way of coding.  Robust and secure code from the LLM is becoming superior to human-generated code.</p>
-                    <p>If you feel that vibe, then welcome to the tribe.  The vibe tribe still does code reviews, but mostly just to admire the work of the AI.</p>
+                    <p>If you feel that vibe, then welcome to the tribe.  The tribe still does code reviews, but mostly just to admire the work of the AI.</p>
                 </div>
                 <div class="about-stats">
                     <div class="stat">
@@ -160,6 +173,15 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        function redirectToDroplet(selectElement) {
+            const url = selectElement.value;
+            if (url) { // Only redirect if a valid URL (not the disabled option) is selected
+                window.location.href = url;
+            }
+        }
+    </script>
 
     <script src="js/script.js"></script>
 </body>
