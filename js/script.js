@@ -64,30 +64,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Contact form handling
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-            
-            // Basic form validation
-            if (!name || !email || !message) {
-                alert('Please fill in all fields.');
-                return;
-            }
-            
-            // In a real implementation, you would send this data to a server
-            // For now, we'll just display a success message
-            alert(`Thank you, ${name}! Your message has been received. I'll get back to you soon.`);
-            contactForm.reset();
-            
-            // Note: In production, you would use a proper form submission method
-            // such as fetch() to a backend API or a service like Formspree
-        });
-    }
 });
